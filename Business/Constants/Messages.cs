@@ -1,4 +1,11 @@
-﻿namespace Business.Constants {
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Serialization;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Business.Constants {
     public static class Messages {
 
         //general messages
@@ -60,6 +67,7 @@
         public static string ReturnDateLessThanRentDate { get; } = "Return date must be later than rent date";
         public static string CarAlreadyRented { get; } = "Car is already rented in given interval";
         public static string CustomerHasNoNationalIdentity { get; } = "You need to add your national identity from your profile to rent a car";
+        public static string FindexScoreInsufficient { get; } = "Findex score is insufficient ";
 
 
         //user manager

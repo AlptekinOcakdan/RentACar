@@ -7,17 +7,24 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Business.Concrete {
     public class RentalManager : IRentalService {
         IRentalDal _rentalDal;
         ICarService _carService;
         IPaymentService _paymentService;
+        IFindexService _findexService;
         ICustomerService _customerService;
-        public RentalManager(IRentalDal rentalDal, IPaymentService paymentService, ICarService carService, ICustomerService customerService) {
+        public RentalManager(IRentalDal rentalDal, IPaymentService paymentService, ICarService carService, IFindexService findexService, ICustomerService customerService) {
             _rentalDal = rentalDal;
             _paymentService = paymentService;
             _carService = carService;
+            _findexService = findexService;
             _customerService = customerService;
         }
 
@@ -25,6 +32,7 @@ namespace Business.Concrete {
         public IResult Add(Rental rental, CreditCard card) {
             var businessResult = BusinessRules.Run(
                 CheckIfCarRented(rental),
+                CheckIfFindexScoreSufficient(rental),
                 CheckIfReturnDateGreaterThanRentDate(rental)
                 );
             if (businessResult != null) {
@@ -111,6 +119,20 @@ namespace Business.Concrete {
             ).Any();
             if (isOccupied) {
                 return new ErrorResult(Messages.CarAlreadyRented);
+            }
+            return new SuccessResult();
+        }
+
+        private IResult CheckIfFindexScoreSufficient(Rental rental) {
+            var customer = _customerService.Get(rental.CustomerId).Data;
+            if (customer.NationalIdentity == null) {
+                return new ErrorResult(Messages.CustomerHasNoNationalIdentity);
+            }
+            var findexScore = _findexService.GetCustomerFindexScore(customer.NationalIdentity).Data;
+
+            var carMinFindexScore = _carService.Get(rental.CarId).Data.FindexScore;
+            if (findexScore < carMinFindexScore) {
+                return new ErrorResult(Messages.FindexScoreInsufficient);
             }
             return new SuccessResult();
         }
