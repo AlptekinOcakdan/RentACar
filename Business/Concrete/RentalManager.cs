@@ -1,0 +1,120 @@
+﻿using Business.Abstract;
+using Business.BusinessAspects.Autofac;
+using Business.Constants;
+using Core.Aspects.Autofac.Caching;
+using Core.Utilities.Business;
+using Core.Utilities.Results;
+using DataAccess.Abstract;
+using Entities.Concrete;
+using Entities.DTOs;
+
+namespace Business.Concrete {
+    public class RentalManager : IRentalService {
+        IRentalDal _rentalDal;
+        ICarService _carService;
+        IPaymentService _paymentService;
+        ICustomerService _customerService;
+        public RentalManager(IRentalDal rentalDal, IPaymentService paymentService, ICarService carService, ICustomerService customerService) {
+            _rentalDal = rentalDal;
+            _paymentService = paymentService;
+            _carService = carService;
+            _customerService = customerService;
+        }
+
+        [CacheRemoveAspect("IRentalService.Get")]
+        public IResult Add(Rental rental, CreditCard card) {
+            var businessResult = BusinessRules.Run(
+                CheckIfCarRented(rental),
+                CheckIfReturnDateGreaterThanRentDate(rental)
+                );
+            if (businessResult != null) {
+                return businessResult;
+            }
+            rental.TotalDays = rental.ReturnDate.Subtract(rental.RentDate).Days + 1;
+            rental.TotalPrice = rental.TotalDays * _carService.Get(rental.CarId).Data.DailyPrice;
+
+            var paymentResult = _paymentService.Pay(card, rental.TotalPrice);
+            if (!paymentResult.Success) {
+                return paymentResult;
+            }
+
+            _rentalDal.Add(rental);
+            return new SuccessResult(Messages.CarRented);
+        }
+
+        [SecuredOperation("admin")]
+        [CacheRemoveAspect("IRentalService.Get")]
+        public IResult Delete(Rental rental) {
+            _rentalDal.Delete(rental);
+            return new SuccessResult();
+        }
+
+        [CacheAspect(10)]
+        public IDataResult<Rental> Get(int userId) {
+            return new SuccessDataResult<Rental>(_rentalDal.Get(u => u.Id == userId));
+        }
+
+        [SecuredOperation("admin")]
+        [CacheAspect(10)]
+        public IDataResult<List<Rental>> GetAll() {
+            return new SuccessDataResult<List<Rental>>(_rentalDal.GetAll());
+        }
+
+        public IDataResult<List<DateTime>> GetOccupiedDates(int carId) {
+            List<DateTime> occupiedDates = new List<DateTime>();
+
+            DateTime date = DateTime.Today;
+            var lastDate = date.AddDays(30);
+
+            var rentals = _rentalDal.GetAll(r =>
+                r.CarId == carId &&
+                r.ReturnDate > DateTime.Today
+            );
+
+            for (; date < lastDate; date = date.AddDays(1)) {
+                foreach (var rental in rentals) {
+                    if (date >= rental.RentDate && date <= rental.ReturnDate) {
+                        occupiedDates.Add(date);
+                        break;
+
+                    }
+                }
+            }
+            return new SuccessDataResult<List<DateTime>>(occupiedDates);
+
+        }
+
+        [CacheAspect(10)]
+        [SecuredOperation("admin")]
+        public IDataResult<List<RentalDetailDto>> GetDetails() {
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails().OrderByDescending(r => r.RentDate).ToList());
+        }
+
+        [SecuredOperation("admin")]
+        [CacheRemoveAspect("IRentalService.Get")]
+        public IResult Update(Rental rental) {
+            _rentalDal.Update(rental);
+            return new SuccessResult();
+        }
+
+        private IResult CheckIfReturnDateGreaterThanRentDate(Rental rental) {
+            if (rental.ReturnDate < rental.RentDate) {
+                return new ErrorResult(Messages.ReturnDateLessThanRentDate);
+            }
+            return new SuccessResult();
+        }
+
+        private IResult CheckIfCarRented(Rental rental) {
+            var isOccupied = _rentalDal.GetAll(r => r.CarId == rental.CarId &&
+                r.ReturnDate >= rental.RentDate && //Finds the rentals which are not yet returned
+                r.RentDate <= rental.ReturnDate // Finds the rentals which are rented before requests return date. Which means it occupies requests rent interval
+            ).Any();
+            if (isOccupied) {
+                return new ErrorResult(Messages.CarAlreadyRented);
+            }
+            return new SuccessResult();
+        }
+
+
+    }
+}
