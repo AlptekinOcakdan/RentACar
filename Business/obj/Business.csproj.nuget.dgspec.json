@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Business\\Business.csproj": {}
+    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Business\\Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Business\\Business.csproj": {
+    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\alpte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Business\\obj\\",
+        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -22,21 +22,21 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\DataAccess\\DataAccess.csproj"
+              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\DataAccess\\DataAccess.csproj"
               },
-              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj"
+              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -48,20 +48,20 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Autofac": {
               "target": "Package",
-              "version": "[6.3.0, )"
+              "version": "[6.5.0, )"
             },
             "Autofac.Extras.DynamicProxy": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.1, )"
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[10.3.4, )"
+              "version": "[11.4.0, )"
             },
             "Microsoft.AspNetCore.Http.Abstractions": {
               "target": "Package",
@@ -69,7 +69,7 @@
             },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[5.0.17, )"
             }
           },
           "imports": [
@@ -92,14 +92,14 @@
         }
       }
     },
-    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj": {
+    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\alpte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\obj\\",
+        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -110,15 +110,15 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {}
           }
         },
@@ -129,24 +129,24 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Autofac": {
               "target": "Package",
-              "version": "[6.3.0, )"
+              "version": "[6.5.0, )"
             },
             "Autofac.Extensions.DependencyInjection": {
               "target": "Package",
-              "version": "[7.2.0, )"
+              "version": "[8.0.0, )"
             },
             "Autofac.Extras.DynamicProxy": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[6.0.1, )"
             },
             "FluentValidation": {
               "target": "Package",
-              "version": "[10.3.4, )"
+              "version": "[11.4.0, )"
             },
             "Microsoft.AspNetCore.Http": {
               "target": "Package",
@@ -154,19 +154,19 @@
             },
             "Microsoft.AspNetCore.Http.Features": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[5.0.17, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
-              "version": "[6.0.0, )"
+              "version": "[7.0.1, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[13.0.2, )"
             }
           },
           "imports": [
@@ -189,14 +189,14 @@
         }
       }
     },
-    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\DataAccess\\DataAccess.csproj": {
+    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\DataAccess\\DataAccess.csproj",
+        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\DataAccess\\DataAccess.csproj",
         "packagesPath": "C:\\Users\\alpte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -207,21 +207,21 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj"
+              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj"
               },
-              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj"
+              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj"
               }
             }
           }
@@ -233,24 +233,24 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[6.0.12, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.12, )"
+              "version": "[6.0.12, )"
             }
           },
           "imports": [
@@ -273,14 +273,14 @@
         }
       }
     },
-    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj": {
+    "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\alpte\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -291,18 +291,18 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "net6.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "net6.0": {
+            "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\RentACar\\RentACar\\Core\\Core.csproj"
+              "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\Core\\Core.csproj"
               }
             }
           }
@@ -314,8 +314,8 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "net6.0": {
+          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "M/6PO3R98hVctRXpNF72P3MwGqBOauLqgM271yM0ijQ=",
+  "Source": "WebAPI",
+  "BasePath": "_content/WebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebAPI\\wwwroot",
+      "Source": "WebAPI",
+      "ContentRoot": "C:\\Users\\alpte\\source\\repos\\AlptekinOcakdan\\Trash\\RentACar\\WebAPI\\wwwroot\\",
+      "BasePath": "_content/WebAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
