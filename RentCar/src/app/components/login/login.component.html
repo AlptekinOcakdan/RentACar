@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+  <div class="col mt-5" style="max-width: 400px">
+
+    <p-card>
+      <ng-template pTemplate="header" class="row text-center">
+        <div class="row text-center mt-3">
+          <h3 class="my-4">Welcome Back</h3>
+
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="content">
+
+        <form class="floating" [formGroup]="loginForm">
+          <span class="p-float-label mb-3">
+            <input id="email" type="email" pInputText formControlName="email" class="p-inputtext w-100">
+            <label for="email">Email</label>
+          </span>
+          <span class="p-float-label mb-5">
+            <input id="password" type="password" pInputText formControlName="password" class="p-inputtext w-100">
+            <label for="password">Password</label>
+          </span>
+          <button pButton type="submit" label="Login" (click)="login()" [disabled]="loginForm.invalid" class="w-100"></button>
+        </form>
+      </ng-template>
+
+      <ng-template pTemplate="footer">
+        <div class="row text-center mb-4">
+          <h6>Don't have an account? <a routerLink="/register" class="text-blue-500 cursor-pointer">Create Now!</a></h6>
+
+          <a routerLink="/resetpw" class="text-blue-500 cursor-pointer">Forget your password?</a>
+        </div>
+      </ng-template>
+
+
+
+
+
+    </p-card>
+  </div>
+</div>

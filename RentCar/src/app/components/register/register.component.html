@@ -1,0 +1,48 @@
+<div class="row justify-content-center">
+  <div class="col mt-5" style="max-width: 400px">
+
+    <p-card>
+      <ng-template pTemplate="header" class="row text-center">
+        <div class="row text-center mt-3">
+          <h3 class="my-4">Register</h3>
+
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="content">
+
+          <form class="floating" [formGroup]="registerForm">
+            <span class="p-float-label mb-2">
+              <input id="firstName" type="text" pInputText formControlName="firstName" class="p-inputtext w-100">
+              <label for="firstName">First Name</label>
+            </span>
+            <span class="p-float-label mb-2">
+              <input id="lastName" type="text" pInputText formControlName="lastName" class="p-inputtext w-100">
+              <label for="lastName">Last Name</label>
+            </span>
+            <span class="p-float-label mb-2">
+              <input id="email" type="email" pInputText formControlName="email" class="p-inputtext w-100">
+              <label for="email">Email</label>
+            </span>
+            <span class="p-float-label mb-2">
+              <input id="password" type="password" pInputText formControlName="password" class="p-inputtext w-100">
+              <label for="password">Password</label>
+            </span>
+            <span class="p-float-label">
+              <input id="confirmPassword" type="password" pInputText formControlName="confirmPassword" class="p-inputtext w-100">
+              <label for="confirmPassword">Confirm Password</label>
+            </span>
+          </form>
+      </ng-template>
+
+      <ng-template pTemplate="footer">
+        <button pButton type="submit" label="Register" (click)="register()" [disabled]="registerForm.invalid" class="w-100"></button>
+      </ng-template>
+
+
+
+
+
+    </p-card>
+  </div>
+</div>

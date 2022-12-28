@@ -1,0 +1,106 @@
+<div class="row">
+  <div *ngIf="userLoaded" class="col-9">
+
+    <p-card>
+      <ng-template pTemplate="header" class="row text-center">
+        <div class="row text-center mt-3">
+          <h3 class="my-4">Information</h3>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="content">
+        <form class="floating" [formGroup]="userUpdateForm">
+          <div class="row">
+            <span class="col p-float-label mb-2">
+              <input [disabled]="disabled" id="email" type="text" pInputText value="{{user.email}}"
+                class="p-inputtext-sm">
+              <label for="email">Email</label>
+            </span>
+            <span class="col p-float-label mb-2">
+              <input id="firstName" type="text" pInputText formControlName="firstName" class="p-inputtext-sm">
+              <label for="firstName">First Name</label>
+            </span>
+            <span class="col p-float-label mb-2">
+              <input id="lastName" type="text" pInputText formControlName="lastName" class="p-inputtext-sm">
+              <label for="lastName">Last Name</label>
+            </span>
+          </div>
+        </form>
+      </ng-template>
+
+      <ng-template pTemplate="footer">
+        <div class="text-center">
+
+          <button pButton (click)="updateUser()" [disabled]="userUpdateForm.invalid"
+            class="btn btn-lg btn-primary">Update</button>
+        </div>
+      </ng-template>
+    </p-card>
+
+  </div>
+  <div *ngIf="customerLoaded" class="col-3">
+    <p-card>
+      <ng-template pTemplate="header" class="row">
+        <div class="row text-center mt-3">
+          <h3 class="my-4">Personal Info</h3>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="content">
+        <form class="floating" [formGroup]="customerUpdateForm">
+          <div class="d-flex justify-content-center ">
+            <span class="p-float-label mb-2">
+              <input id="nationalIdentity" type="text" pInputText maxlength="11" formControlName="nationalIdentity" class="p-inputtext-sm">
+              <label for="nationalIdentity">National Identity</label>
+            </span>
+          </div>
+        </form>
+      </ng-template>
+
+      <ng-template pTemplate="footer">
+        <div class="text-center">
+
+          <button pButton (click)="updateCustomer()" [disabled]="customerUpdateForm.invalid"
+            class="btn btn-lg btn-primary">Update</button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
+</div>
+<div class="row justify-content-center">
+  <div *ngIf="userLoaded" class="col mt-5" style="max-width: 400px">
+
+    <p-card>
+      <ng-template pTemplate="header" class="row text-center">
+        <div class="row text-center mt-3">
+          <h3 class="my-4">Change Password</h3>
+        </div>
+      </ng-template>
+
+      <ng-template pTemplate="content">
+        <form class="floating" [formGroup]="passwordUpdateForm">
+          <span class="p-float-label mb-2">
+            <input id="oldPassword" type="password" pInputText formControlName="oldPassword" class="p-inputtext w-100">
+            <label for="oldPassword">Old Password</label>
+          </span>
+          <span class="p-float-label mb-2">
+            <input id="newPassword" type="password" pInputText formControlName="newPassword" class="p-inputtext w-100">
+            <label for="newPassword">New Password</label>
+          </span>
+          <span class="p-float-label">
+            <input id="confirmPassword" type="password" pInputText formControlName="confirmPassword"
+              class="p-inputtext w-100">
+            <label for="confirmPassword">Confirm Password</label>
+          </span>
+        </form>
+      </ng-template>
+
+      <ng-template pTemplate="footer">
+        <button pButton (click)="updatePassword()" [disabled]="passwordUpdateForm.invalid"
+          class="w-100 btn btn-lg btn-primary">Change Password</button>
+      </ng-template>
+    </p-card>
+
+  </div>
+
+</div>
