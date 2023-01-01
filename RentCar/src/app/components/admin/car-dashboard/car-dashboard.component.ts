@@ -92,7 +92,7 @@ export class CarDashboardComponent implements OnInit {
       key: car.id.toString(),
       message: 'Are you sure that you want to delete ' + carName + '?',
       accept: () => {
-        this.carService.deleteCar(car.id).subscribe(
+        this.carService.deleteCar(car).subscribe(
           (result)=>{
             if(result.success){
               this.toastrService.success(result.message,"Delete successful", );
