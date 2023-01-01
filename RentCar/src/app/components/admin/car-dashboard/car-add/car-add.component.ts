@@ -66,7 +66,10 @@ export class CarAddComponent implements OnInit {
       dailyPrice: [0, [Validators.required]],
       modelYear: [0, [Validators.required]],
       description: ['', [Validators.required]],
+<<<<<<< Updated upstream
       findexScore: [0, [Validators.required]]
+=======
+>>>>>>> Stashed changes
     });
   }
 

@@ -98,7 +98,10 @@ export class CarUpdateComponent implements OnInit {
       modelYear: [this.car.modelYear, Validators.required],
       dailyPrice: [this.car.dailyPrice, Validators.required],
       description: [this.car.description, Validators.required],
+<<<<<<< Updated upstream
       findexScore: [this.car.findexScore, Validators.required],
+=======
+>>>>>>> Stashed changes
 
     });
   }

@@ -48,7 +48,19 @@ export class CarService {
   }
 
   deleteCar(carId:number):Observable<ResponseModel>{
+<<<<<<< Updated upstream
     return this.httpClient.post<ResponseModel>(this.serviceUrl + "delete", {id:carId})
+=======
+    return this.httpClient.post<ResponseModel>(this.serviceUrl + "delete", {
+      "id": carId,
+      "brandId": 0,
+      "colorId": 0,
+      "modelYear": 0,
+      "dailyPrice": 0,
+      "model": "string",
+      "description": "string"
+    })
+>>>>>>> Stashed changes
   }
 
   getCarStats(id:number):Observable<ObjectResponseModel<CarStatsModel>>{

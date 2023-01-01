@@ -36,7 +36,14 @@ export class ImageService {
   }
 
   deleteImage(id: number): Observable<ResponseModel> {
+<<<<<<< Updated upstream
     return this.httpClient.post<ResponseModel>(this.serviceUrl + "delete", { id: id });
+=======
+    return this.httpClient.post<ResponseModel>(this.serviceUrl + "delete", {
+      "id": id,
+      "imagePath": "string",
+    });
+>>>>>>> Stashed changes
   }
 
 }
