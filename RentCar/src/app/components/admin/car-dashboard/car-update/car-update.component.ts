@@ -98,11 +98,6 @@ export class CarUpdateComponent implements OnInit {
       modelYear: [this.car.modelYear, Validators.required],
       dailyPrice: [this.car.dailyPrice, Validators.required],
       description: [this.car.description, Validators.required],
-<<<<<<< Updated upstream
-      findexScore: [this.car.findexScore, Validators.required],
-=======
->>>>>>> Stashed changes
-
     });
   }
 
@@ -115,7 +110,7 @@ export class CarUpdateComponent implements OnInit {
   }
 
   deleteImage(image: CarImage) {
-    this.imageService.deleteImage(image.id).subscribe(result => {
+    this.imageService.deleteImage(image).subscribe(result => {
       if (result.success) {
         this.toastrService.success(result.message);
         this.getImages()
